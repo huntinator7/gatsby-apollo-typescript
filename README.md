@@ -4,7 +4,6 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby with Apollo
+  Gatsby with Apollo Hooks, Typescript, Styled Components, and other goodies
 </h1>
-
-This is a minimal example of using Gatsby and Apollo together. It’s GraphQL all the way down! 🐢
+Extended from https://github.com/jlengstorf/gatsby-with-apollo
