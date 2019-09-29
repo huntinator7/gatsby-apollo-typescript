@@ -5,52 +5,67 @@
   "author": "Hunter Arnell <huntinator7@gmail.com>",
   "dependencies": {
     "@apollo/react-hooks": "^3.0.1",
+    "@iconify/react": "^1.1.1",
+    "@material-ui/core": "^4.4.3",
     "@types/isomorphic-fetch": "0.0.35",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/react-sidebar": "^3.0.0",
     "@types/styled-components": "^4.1.18",
-    "apollo-boost": "^0.1.20",
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
     "apollo-link": "^1.2.12",
+    "apollo-link-error": "^1.1.12",
     "apollo-link-http": "^1.5.15",
+    "apollo-link-ws": "^1.0.19",
     "gatsby": "^2.0.19",
+    "gatsby-plugin-catch-links": "^2.1.10",
+    "gatsby-plugin-create-client-paths": "^2.1.9",
     "gatsby-plugin-manifest": "^2.2.6",
+    "gatsby-plugin-material-ui": "^2.1.6",
     "gatsby-plugin-react-helmet": "^3.1.4",
+    "gatsby-plugin-styled-components": "^3.1.6",
     "gatsby-plugin-typescript": "^2.1.2",
+    "gatsby-source-filesystem": "^2.1.26",
     "gatsby-source-graphql": "^2.0.6",
+    "gatsby-transformer-json": "^2.2.9",
     "graphql": "^14.4.2",
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
+    "normalize.css": "^8.0.1",
     "react": "^16.9.0",
-    "react-apollo": "^2.2.4",
     "react-device-detect": "^1.7.5",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "react-hook-form": "^3.23.12",
     "react-loading": "^2.0.3",
     "react-sidebar": "^3.0.2",
+    "react-toastify": "^5.4.0",
     "styled-components": "^4.3.2",
-    "typescript": "^3.5.3"
+    "subscriptions-transport-ws": "^0.9.16",
+    "typescript": "^3.5.3",
+    "ws": "^7.1.2"
   },
   "keywords": [
     "gatsby",
     "apollo",
-    "apollo-boost"
+    "typescript"
   ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0 --port 8001",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "apollo:schema": "apollo schema:download --endpoint=http://graphql.source.com/graphql src/data/graphql-schema.json",
+    "apollo:gen": "apollo codegen:generate --localSchemaFile=src/data/graphql-schema.json --target=typescript --includes=src/**/*.ts --tagName=gql --addTypename --globalTypesFile=src/types/graphql-global-types.ts types"
   },
   "devDependencies": {
     "prettier": "^1.14.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jlengstorf/gatsby-with-apollo"
+    "url": "https://github.com/huntinator7/gatsby-apollo-typescript"
   }
 }
